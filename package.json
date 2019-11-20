@@ -10,10 +10,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node ./scripts/build-non-split.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "send-to-peoplesoft": "send-to-peoplesoft -d ./build"
+    "send-to-peoplesoft": "send-to-peoplesoft -d ./build/static"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,6 +31,7 @@
     ]
   },
   "devDependencies": {
-    "@highpoint/send-to-peoplesoft": "^0.4.1"
+    "@highpoint/send-to-peoplesoft": "^0.4.1",
+    "rewire": "^4.0.1"
   }
 }
