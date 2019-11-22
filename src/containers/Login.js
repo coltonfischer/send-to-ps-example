@@ -12,6 +12,9 @@ export default function Login(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    
+    // @todo const getToken = require('@highpoint/get-ps-token');
+
   }
 
   return (
