@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@highpoint/get-ps-token": "^0.1.2",
     "react": "^16.12.0",
     "react-bootstrap": "^0.33.0",
     "react-dom": "^16.12.0",
@@ -34,7 +35,6 @@
     ]
   },
   "devDependencies": {
-    "@highpoint/get-ps-token": "^0.1.2",
     "@highpoint/send-to-peoplesoft": "^0.4.1",
     "rewire": "^4.0.1"
   }
