@@ -2,31 +2,45 @@ import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
 
+const getToken = require('@highpoint/get-ps-token');
+
 export default function Login(props) {
-  const [email, setEmail] = useState("");
+  const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    return user.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    
-    // @todo const getToken = require('@highpoint/get-ps-token');
+
+    // use getToken to login to PS to obtain a PS_TOKEN
+    // keep track of the returned cookie jar for subsequent requests to PS APIs
+    try {
+        const jar = await getToken({
+        PS_HOSTNAME: 'a15a0015.ngrok.io',
+        PS_ENVIRONMENT: 'ps',
+        PS_USERNAME: user,
+        PS_PASSWORD: password
+        });
+        alert("logged In");
+    } catch(e){
+        //alert(e.message);
+    }
+    alert("logged In");
 
   }
 
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
+        <FormGroup controlId="user" bsSize="large">
+          <ControlLabel>User</ControlLabel>
           <FormControl
             autoFocus
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+            value={user}
+            onChange={e => setUser(e.target.value)}
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
