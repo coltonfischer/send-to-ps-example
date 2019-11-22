@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@highpoint/get-ps-token": "^0.1.2",
     "@highpoint/send-to-peoplesoft": "^0.4.1",
     "rewire": "^4.0.1"
   }
