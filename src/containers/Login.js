@@ -18,12 +18,12 @@ export default function Login(props) {
     // use getToken to login to PS to obtain a PS_TOKEN
     // keep track of the returned cookie jar for subsequent requests to PS APIs
     try {
-        const jar = await getToken({
-        PS_HOSTNAME: 'a15a0015.ngrok.io',
-        PS_ENVIRONMENT: 'ps',
-        PS_USERNAME: user,
-        PS_PASSWORD: password
-        });
+        // const jar = await getToken({
+        // PS_HOSTNAME: 'a15a0015.ngrok.io',
+        // PS_ENVIRONMENT: 'ps',
+        // PS_USERNAME: user,
+        // PS_PASSWORD: password
+        // });
         alert("logged In");
     } catch(e){
         //alert(e.message);
