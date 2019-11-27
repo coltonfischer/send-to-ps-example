@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
 
-//const getToken = require('@highpoint/get-ps-token');
+const getToken = require('@highpoint/get-ps-token');
 
 export default function Login(props) {
   const [user, setUser] = useState("");
@@ -18,17 +18,17 @@ export default function Login(props) {
     // use getToken to login to PS to obtain a PS_TOKEN
     // keep track of the returned cookie jar for subsequent requests to PS APIs
     try {
-        // const jar = await getToken({
-        // PS_HOSTNAME: 'a15a0015.ngrok.io',
-        // PS_ENVIRONMENT: 'ps',
-        // PS_USERNAME: user,
-        // PS_PASSWORD: password
-        // });
+        const jar = await getToken({
+        PS_HOSTNAME: 'inlets.rover01.coltonfischer.com',
+        PS_ENVIRONMENT: 'ps',
+        PS_USERNAME: user,
+        PS_PASSWORD: password
+        });
         alert("logged In");
+        console.log(jar);
     } catch(e){
-        //alert(e.message);
+        alert(e.message);
     }
-    alert("logged In");
 
   }
 
